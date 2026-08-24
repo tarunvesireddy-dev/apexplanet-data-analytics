@@ -33,5 +33,41 @@ readme_addition = """
 
 with open('../README.md', 'a') as f:
     f.write(readme_addition)
+    readme_addition = """
+
+## Task 3: Data Visualization & Dashboarding
+
+**Objective:** Create professional dashboards and visualizations.
+
+### What was done
+
+**Python Visualization**
+- Created static plots using Matplotlib: line chart (monthly sales trend), bar chart (sales by category), scatter plot (discount vs profit), histogram (sales distribution)
+- Created advanced plots using Seaborn: correlation heatmap, pairplot, boxplot (profit by category)
+- Built interactive visualizations using Plotly (sales by region)
+- Exported charts as PNG and HTML to the `reports/` folder
+
+**Power BI Dashboard**
+- Connected Power BI Desktop to the cleaned Superstore dataset
+- Built an executive dashboard with:
+  - KPI cards: Total Sales, Total Profit, Total Orders, Total Customers
+  - Sales trend line chart
+  - Category breakdown (bar/donut chart)
+  - Geographic map by state/city
+  - Top 10 products and customers
+  - Filter panel with Region, Category, and Date slicers
+- Created DAX measures, including Profit Margin %
+
+### Files
+- `notebooks/t3_visualization.ipynb` — Python visualization notebook (Matplotlib, Seaborn, Plotly)
+- `reports/sales_by_category.png` — static chart export
+- `reports/sales_by_region.html` — interactive chart export
+- `dashboards/superstore_dashboard.pbix` — Power BI dashboard file
+"""
+
+with open('../README.md', 'a') as f:
+    f.write(readme_addition)
+
+print("README updated!")
 
 print("README updated!")
