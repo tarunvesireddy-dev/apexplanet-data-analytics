@@ -115,3 +115,26 @@ with open('../README.md', 'a') as f:
 print("README updated!")
 
 print("README updated!")
+
+readme_addition = """
+
+## Task 5: Final Report, Automation & Presentation
+
+**Objective:** Create final report, automate pipeline, and submit deliverables.
+
+### What was done
+- Created a 2-page executive summary PDF report with key findings, dashboard screenshot, and business recommendations
+- Built an automated Python pipeline (`scripts/pipeline.py`) that loads raw data, cleans it, calculates KPIs, and exports to Excel
+- Scheduled the pipeline to run automatically using Windows Task Scheduler
+- Finalized repository with requirements.txt and complete documentation
+
+### Files
+- `reports/executive_summary.pdf` — final 2-page executive report
+- `scripts/pipeline.py` — automated data pipeline
+- `reports/pipeline_output.xlsx` — pipeline output (cleaned data + KPIs)
+- `requirements.txt` — Python package dependencies
+"""
+
+with open('../README.md', 'a') as f:
+    f.write(readme_addition)
+print("README updated!")
