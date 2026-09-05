@@ -63,7 +63,51 @@ with open('../README.md', 'a') as f:
 - `reports/sales_by_category.png` — static chart export
 - `reports/sales_by_region.html` — interactive chart export
 - `dashboards/superstore_dashboard.pbix` — Power BI dashboard file
+
 """
+readme_addition = """
+
+## Task 4: Advanced Analytics & Statistical Modeling
+
+**Objective:** Apply statistical analysis and basic predictive modeling.
+
+### What was done
+
+**Statistical Analysis**
+- Computed descriptive statistics (mean, median, mode, std dev, skewness) for Sales, Profit, Discount, and Quantity
+- Ran a t-test comparing profit between high-discount and low-discount orders
+- Ran a chi-square test to check the relationship between Region and Category
+- Calculated a 95% confidence interval for mean Profit
+
+**Time Series Analysis**
+- Converted Order Date into a time series index and resampled sales to monthly totals
+- Decomposed monthly sales into trend, seasonality, and residual components
+- Built a simple 3-month moving average forecast
+
+**Customer Segmentation (K-Means Clustering)**
+- Engineered RFM-style features (Total Sales, Total Profit, Order Count, Avg Discount) per customer
+- Scaled features with StandardScaler and used the elbow method to select K=4
+- Segmented customers into 4 clusters and visualized them with PCA (2D)
+- Profiled and labeled each segment:
+  - **VIP / Top Customers** — highest sales & profit, low discount → prioritize retention
+  - **Loyal Frequent Buyers** — high order count, moderate discount → shift toward bundles over discounts
+  - **Low-Engagement / Occasional Buyers** — low order count, low discount → re-engagement campaigns
+  - **Discount-Sensitive / Unprofitable** — highest discount (25.6%), negative average profit → flag for discount policy review
+
+**Predictive Model (Linear Regression)**
+- Built a model to predict Profit from Sales, Quantity, Discount, Category, Sub-Category, and Region
+- Results: R² = -0.64, MAE = $67.68, RMSE = $282.32
+- Top influential features: Sub-Category (Copiers, positive), Discount (negative), Sub-Category (Machines, negative)
+- The weak fit is attributed to extreme outlier orders; despite this, the model reinforces the project-wide finding that discounting is the strongest driver of reduced profit
+
+### Files
+- `notebooks/t4_advanced_analytics.ipynb` — statistical analysis, time series, clustering, and predictive modeling notebook
+"""
+
+with open('../README.md', 'a') as f:
+    f.write(readme_addition)
+
+print("README updated!")
 
 with open('../README.md', 'a') as f:
     f.write(readme_addition)
